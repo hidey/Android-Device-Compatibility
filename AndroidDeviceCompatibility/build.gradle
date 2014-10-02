@@ -4,9 +4,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.4.0'
     }
 }
 apply plugin: 'android-library'
+apply plugin: 'coveralls'
 
 repositories {
     mavenCentral()
@@ -19,6 +21,15 @@ android {
     defaultConfig {
         minSdkVersion 7
         targetSdkVersion 19
+    }
+    jacoco {
+        version = '0.7.0.201403182114'
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
     }
 }
 
