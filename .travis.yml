@@ -1,6 +1,5 @@
 language: android
 env:
-  - COVERALLS_REPO_TOKEN=vrcQvkqY5wUYOKnIbnQlGMtdgta2Gj6FS
   matrix:
     - ANDROID_TARGET=android-8  ANDROID_ABI=armeabi
     - ANDROID_TARGET=android-10 ANDROID_ABI=armeabi
@@ -29,4 +28,4 @@ script:
   - ./gradlew build connectedCheck
 
 after_success:
-  - ./gradlew -p AndroidDeviceCompatibility -b AndroidDeviceCompatibility/coverage.gradle coveralls
+  - COVERALLS_REPO_TOKEN=vrcQvkqY5wUYOKnIbnQlGMtdgta2Gj6FS ./gradlew -p AndroidDeviceCompatibility -b AndroidDeviceCompatibility/coverage.gradle coveralls
