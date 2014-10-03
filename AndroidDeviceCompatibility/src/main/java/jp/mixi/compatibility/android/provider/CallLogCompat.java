@@ -28,10 +28,11 @@ public final class CallLogCompat {
 
     public static String getName(Cursor cursor, String fallback) {
         String name = cursor.getString(cursor.getColumnIndexOrThrow(CallLog.Calls.CACHED_NAME));
-        if (TextUtils.isEmpty(name))
+        if (TextUtils.isEmpty(name)) {
             return fallback;
-        else
+        } else {
             return name;
+        }
     }
 
     @SuppressLint("InlinedApi")

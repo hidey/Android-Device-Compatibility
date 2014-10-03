@@ -35,10 +35,11 @@ public final class TelephonyCompat {
 
         @SuppressLint("NewApi") // good to go with our compatibility
         public static Uri getContentUri() {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 return Telephony.Sms.CONTENT_URI;
-            else
+            } else {
                 return Uri.parse(URI_CONTENT_SMS);
+            }
         }
 
         @SuppressLint("NewApi") // we port from the newer api
