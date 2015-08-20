@@ -1,0 +1,19 @@
+machine:
+  java:
+    version: openjdk7
+  environment:
+    ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+  override:
+    - echo y | android update sdk --no-ui --filter "android-21,build-tools-21.1.2"
+
+test:
+  override:
+    - ./gradlew test
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - ./gradlew assembleRelease
