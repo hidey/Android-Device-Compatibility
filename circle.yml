@@ -22,8 +22,3 @@ test:
     # copy the test results to the test results directory.
     - cp -r AndroidDeviceCompatibility/build/outputs/androidTest-results/* $CIRCLE_TEST_REPORTS
 
-deployment:
-  master:
-    branch: master
-    commands:
-      - ./gradlew assembleRelease
