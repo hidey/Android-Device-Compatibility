@@ -16,7 +16,7 @@ test:
         parallel: true
     # wait for it to have booted
     - circle-android wait-for-boot
-    - ./gradlew connectedAndroidTest
+    - ./gradlew connectedAndroidTest test
     # copy the build outputs to artifacts
     - cp -r AndroidDeviceCompatibility/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
