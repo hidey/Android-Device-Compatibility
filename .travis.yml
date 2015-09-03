@@ -1,5 +1,7 @@
 language: android
 env:
+  global:
+    - ADB_INSTALL_TIMEOUT=10
   matrix:
     - ANDROID_TARGET=android-8  ANDROID_ABI=armeabi
     - ANDROID_TARGET=android-10 ANDROID_ABI=armeabi
@@ -25,4 +27,4 @@ before_script:
   - adb shell input keyevent 82 &
 
 after_success:
-  - ./gradlew -p AndroidDeviceCompatibility -b AndroidDeviceCompatibility/coverage.gradle coveralls
+  - ./gradlew coveralls
