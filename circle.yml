@@ -5,6 +5,7 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     JAVA_OPTS: "-Xmx2048m -XX:MaxPermSize=1024m"
     ADB_INSTALL_TIMEOUT: 10  # minutes
+    COVERALLS_REPO_TOKEN: Cq5wE2UtjJDYO9ckDEsDCqH3pf93ckNKw
 
 dependencies:
   override:
